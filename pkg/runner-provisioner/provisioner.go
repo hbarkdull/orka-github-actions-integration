@@ -52,16 +52,7 @@ var commands_template = []string{
 	"echo 'Git Action Runner exited'",
 }
 
-func generateRandomSuffix() string {
-    b := make([]byte, 4)
-    if _, err := rand.Read(b); err != nil {
-        return "0000" // fallback
-    }
-    return hex.EncodeToString(b)
-}
-
-func (p *RunnerProvisioner) ProvisionRunner(ctx context.Context, prerunnerName string) error {
-	runnerName := fmt.Sprintf("%s-%s", prerunnerName, generateRandomSuffix())
+func (p *RunnerProvisioner) ProvisionRunner(ctx context.Context, runnerName string) error {
 	p.logger.Infof("deploying Orka VM with name %s", runnerName)
 	vmResponse, err := p.orkaClient.DeployVM(ctx, runnerName, p.envData.OrkaVMConfig)
 	if err != nil {
