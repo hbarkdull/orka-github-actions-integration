@@ -17,7 +17,7 @@ on:
 
 env:
   GOLANG_VERSION: "1.23.0"
-  GHCR_REPO: ghcr.io/macstadium/orka-github-runner
+  GHCR_REPO: ghcr.io/hbarkdull/orka-github-runner
 
 jobs:
   ci:
