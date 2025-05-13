@@ -5,8 +5,6 @@ import (
 	"fmt"
 	"strings"
 	"sync"
-	"crypto/rand"
-	"encoding/hex"
 
 	"github.com/macstadium/orka-github-actions-integration/pkg/env"
 	"github.com/macstadium/orka-github-actions-integration/pkg/github/actions"
