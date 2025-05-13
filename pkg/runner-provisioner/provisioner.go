@@ -61,7 +61,6 @@ func generateRandomSuffix() string {
 }
 
 func (p *RunnerProvisioner) ProvisionRunner(ctx context.Context, runnerName string) error {
-	# Potentially add a random generator here
 	runnerName := fmt.Sprintf(runnerName%s", generateRandomSuffix())
 	p.logger.Infof("deploying Orka VM with name %s", runnerName)
 	vmResponse, err := p.orkaClient.DeployVM(ctx, runnerName, p.envData.OrkaVMConfig)
