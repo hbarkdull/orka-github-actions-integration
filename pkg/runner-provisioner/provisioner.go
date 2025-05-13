@@ -60,8 +60,8 @@ func generateRandomSuffix() string {
     return hex.EncodeToString(b)
 }
 
-func (p *RunnerProvisioner) ProvisionRunner(ctx context.Context, runnerName string) error {
-	runnerName = fmt.Sprintf("%s-%s", runnerName, generateRandomSuffix())
+func (p *RunnerProvisioner) ProvisionRunner(ctx context.Context, prerunnerName string) error {
+	runnerName := fmt.Sprintf("%s-%s", prerunnerName, generateRandomSuffix())
 	p.logger.Infof("deploying Orka VM with name %s", runnerName)
 	vmResponse, err := p.orkaClient.DeployVM(ctx, runnerName, p.envData.OrkaVMConfig)
 	if err != nil {
