@@ -18,6 +18,8 @@ on:
 env:
   GOLANG_VERSION: "1.23.0"
   GHCR_REPO: ghcr.io/hbarkdull/orka-github-runner
+  ACTIONS_RUNNER_DEBUG: true
+  ACTIONS_RUNNER_TRACE: true
 
 jobs:
   ci:
